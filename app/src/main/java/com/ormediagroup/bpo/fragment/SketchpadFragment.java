@@ -43,7 +43,7 @@ public class SketchpadFragment extends BaseFragment {
 
     private void initView() {
         sketchpad = view.findViewById(R.id.sketchpad);
-        sketchpad.setPenColor(Color.RED);
+        sketchpad.setPenColor(Color.BLACK);
         clear = view.findViewById(R.id.clear);
         save = view.findViewById(R.id.save);
         open = view.findViewById(R.id.open);
@@ -57,40 +57,42 @@ public class SketchpadFragment extends BaseFragment {
             @Override
             public void onClick(View v) {
                 Bitmap bitmap = sketchpad.getBitmap();
+
+                // save to local
 //                Bitmap bitmap = sketchpad.cropBitmap(0,0,200,100);
-                String path = sketchpad.save(bitmap);
-                if (path != null) {
-                    sketchpad.scanFile(mActivity, path);
-                    String encodeImage = sketchpad.getEncodeImage(bitmap);
-                    Log.i(TAG, "onClick: encodeImage"+encodeImage);
-                    Toast.makeText(mActivity, "保存成功", Toast.LENGTH_SHORT).show();
-                    new JSONResponse(mActivity, SUBMIT_URL, "file=" + encodeImage, new JSONResponse.onComplete() {
-                        @Override
-                        public void onComplete(JSONObject json) {
-                            Log.i(TAG, "onComplete: upload json = "+json);
-                        }
-                    });
-                }
-                Log.i(TAG, "onClick: filepath = " + path);
+//                String path = sketchpad.save(bitmap);
+//                if (path != null) {
+//                    sketchpad.scanFile(mActivity, path);
+//                    Log.i(TAG, "onClick: filepath = " + path);
+//                }
+
+                // save to server
+                String encodeImage = sketchpad.getEncodeImage(bitmap);
+                Log.i(TAG, "onClick: encodeImage" + encodeImage);
+                new JSONResponse(mActivity, SUBMIT_URL, "file=" + encodeImage, new JSONResponse.onComplete() {
+                    @Override
+                    public void onComplete(JSONObject json) {
+                        Log.i(TAG, "onComplete: upload json = " + json);
+                    }
+                });
+                Toast.makeText(mActivity, "保存成功", Toast.LENGTH_SHORT).show();
+
             }
         });
         open.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-//                intent.setType("image/*");
-//                intent.addCategory(Intent.CATEGORY_OPENABLE);
                 Intent intent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                 mActivity.startActivityForResult(intent, 1);
             }
         });
     }
 
-    private void toLandscape(){
+    private void toLandscape() {
         mActivity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
     }
 
-    private void toPortrait(){
+    private void toPortrait() {
         mActivity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     }
 
@@ -98,13 +100,13 @@ public class SketchpadFragment extends BaseFragment {
     public boolean onBackPressed() {
         toPortrait();
         setOnSketchpadFragmentListener sosfl = (setOnSketchpadFragmentListener) mActivity;
-        if (sosfl!=null){
+        if (sosfl != null) {
             sosfl.showBottomBar();
         }
         return true;
     }
 
-    public interface setOnSketchpadFragmentListener{
+    public interface setOnSketchpadFragmentListener {
         void showBottomBar();
     }
 }

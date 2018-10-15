@@ -69,7 +69,7 @@ public class SketchpadView extends View {
 
     }
 
-    public void setCanvasColor(int color){
+    public void setCanvasColor(int color) {
         cacheCanvas.drawColor(color);
     }
 
@@ -161,7 +161,6 @@ public class SketchpadView extends View {
      * @return
      */
     public String save(Bitmap bitmap) {
-//        Bitmap bitmap = getBitmap();
         if (bitmap != null) {
             File dir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
             if (dir != null) {
