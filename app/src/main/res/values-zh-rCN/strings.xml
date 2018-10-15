@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">BPO</string>
+    <string name="connection_error">未能连接网络，请检查网络连接。</string>
+    <string name="login_title">登录</string>
+    <string name="login_email">联络人邮箱</string>
+    <string name="login_password">密码</string>
+    <string name="login_remember">记住我的登录信息</string>
+    <string name="login_lostpass">忘记密码</string>
+    <string name="my_company_title">我的公司</string>
+    <string name="mycompany_name">公司名称</string>
+    <string name="mycompany_date">最后修改日期</string>
+    <string name="mycompany_progress">申请进度</string>
+    <string name="company_message">消息</string>
+    <string name="company_file">文件</string>
+    <string name="company_delete">删除</string>
+    <string name="company_modify">修改</string>
+    <string name="please_login">请先登录</string>
+    <string name="login_success">登录成功</string>
+    <string name="login_failed">登录失败，邮箱或密码错误</string>
+    <string name="login_notnull">邮箱和密码不能为空。</string>
+    <string name="permission_request">请打开相关权限，否则无法正常使用！</string>
+    <string name="permission_succeed">授权成功！</string>
+    <string name="language_default">默认</string>
+    <string name="downloading">正在下载...</string>
+    <string name="download_completed">下载完成</string>
+</resources>

@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">BPO</string>
+    <string name="connection_error">Failed to connect to the network, please check the network connection.</string>
+    <string name="login_title">Login</string>
+    <string name="login_email">Email</string>
+    <string name="login_password">Password</string>
+    <string name="login_remember">Remember Me.</string>
+    <string name="login_lostpass">Forget password?</string>
+    <string name="my_company_title">Your company</string>
+    <string name="mycompany_name">Name</string>
+    <string name="mycompany_date">Last Modified Date</string>
+    <string name="mycompany_progress">Progress</string>
+    <string name="company_message">message</string>
+    <string name="company_file">file</string>
+    <string name="company_delete">delete</string>
+    <string name="company_modify">edit</string>
+    <string name="please_login">Please login</string>
+    <string name="login_success">login successful</string>
+    <string name="login_failed">Login failed, email or password is incorrect</string>
+    <string name="login_notnull">Account and password cannot be empty.</string>
+    <string name="permission_request">Please open the relevant permissions, otherwise it will not work properly!</string>
+    <string name="permission_succeed">Authorized success!</string>
+    <string name="language_default">default</string>
+    <string name="downloading">Downloading...</string>
+    <string name="download_completed">Download completed</string>
+</resources>

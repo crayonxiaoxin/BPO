@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">BPO</string>
+    <string name="connection_error">未能連接網絡，請檢查網絡連接。</string>
+    <string name="login_title">登入</string>
+    <string name="login_email">聯絡人電郵</string>
+    <string name="login_password">密碼</string>
+    <string name="login_remember">記住我的登入信息</string>
+    <string name="login_lostpass">忘記密碼</string>
+    <string name="my_company_title">我的公司</string>
+    <string name="mycompany_name">公司名稱</string>
+    <string name="mycompany_date">最後修改日期</string>
+    <string name="mycompany_progress">申請進度</string>
+    <string name="company_message">消息</string>
+    <string name="company_file">文件</string>
+    <string name="company_delete">删除</string>
+    <string name="company_modify">修改</string>
+    <string name="please_login">請先登入</string>
+    <string name="login_success">登入成功</string>
+    <string name="login_failed">登入失敗，電郵或密碼錯誤</string>
+    <string name="login_notnull">賬戶和密碼不能為空。</string>
+    <string name="permission_request">請打開相關權限，否則無法正常使用！</string>
+    <string name="permission_succeed">授權成功！</string>
+    <string name="language_default">默認</string>
+    <string name="downloading">正在下載...</string>
+    <string name="download_completed">下載完成</string>
+</resources>
